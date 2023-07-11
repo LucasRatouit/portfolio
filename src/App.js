@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Expertise from "./components/Expertise";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font-chakra-petch text-white">
+      <div className="bg-zinc-900 py-12" style={{ height: "920px" }}>
+        <Header />
+      </div>
+      <div id="expertise" className="bg-zinc-800 pt-20 pb-32">
+        <Expertise />
+      </div>
+      <div id="projects" className="bg-zinc-900 py-20">
+        <Projects />
+      </div>
+      <div id="contact" className="bg-zinc-800 py-20">
+        <Contact />
+      </div>
     </div>
   );
 }
