@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 function App() {
   return (
     <div className="font-chakra-petch text-white">
-      <div className="bg-zinc-900 py-12" style={{ height: "920px" }}>
+      <div className="bg-zinc-900 py-12 max-sm:px-6 pb-80 max-sm:pb-72">
         <Header />
       </div>
       <div id="expertise" className="bg-zinc-800 pt-20 pb-32">
