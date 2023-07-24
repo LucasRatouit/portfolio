@@ -19,6 +19,7 @@ function Expertise() {
     return (
         <div>
             <h1 className="flex justify-center font-bold text-6xl max-sm:text-4xl pb-16">À propos de moi</h1>
+            <p className="text-justify mx-96  pb-10">Je me suis lancé dans le domaine du développement web après avoir fini mon année de lycée en faisant un stage de 5 semaines dans un espace de Co-Working avec deux développeurs (un dév Front-end et Back-end) puis j'ai continué en autodidacte en étant épaulé par un développeur en freelance.</p>
             <div className="flex flex-row max-sm:flex-col justify-center gap-20 mx-32 max-sm:mx-0">
                 <div className="flex flex-col gap-y-6">
                     <Skills list={skills} name="Mes compétences" />
