@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTheme } from "./useTheme";
 
 function Header() {
+    const { toggleTheme, bgColors, themeLogo, themeIcon, themeIconHover, textColors } = useTheme();
     const [navbar, setNavbar] = useState(false);
+    const [themeButton, setThemeButton] = useState(themeIcon)
 
     function Link(props) {
-        return <a className="hover:text-white max-sm:bg-zinc-700 max-sm:px-3 max-sm:py-2 max-sm:rounded-lg" href={`/#${props.href}`}>{"<"}{props.name} {"/>"}</a>
+        return <a className={`relative inline-block group hover:${textColors} my-auto max-sm:bg-zinc-700 max-sm:px-3 max-sm:py-2 max-sm:rounded-lg`} href={`/#${props.href}`}>
+            {"<"}{props.name} {"/>"}
+            <span className={`absolute w-0 h-px bottom-0 ${bgColors} left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:w-full`}></span>
+            </a>
     }
 
     function navbarStatus() {
@@ -14,15 +20,22 @@ function Header() {
             setNavbar(false)
         }
     }
-
+    
+    useEffect(() => {
+        setThemeButton(themeIcon)
+    }, [themeIcon])
+    
     return (
-        <header className="flex flex-col whitespace-nowrap">
-            <div className="flex flex-row justify-between pl-10 pr-32 max-sm:px-2 max-sm:pr-7">
-                <a href="/"><img className="w-32 max-sm:w-24" src={process.env.PUBLIC_URL + '/logo.png'} alt="logo" /></a>
-                <div className="flex gap-x-20 my-auto text-slate-400 font-semibold text-lg max-sm:hidden">
+        <header className="flex flex-col whitespace-nowrap pt-10 h-screen">
+            <div className="flex flex-row justify-between pl-10 pr-12 max-sm:pl-0 max-sm:pr-5">
+                <a href="/"><img className="w-32 max-sm:w-24" src={process.env.PUBLIC_URL + themeLogo} alt="logo" /></a>
+                <div className="flex gap-x-12 my-auto font-semibold text-lg max-sm:hidden">
                     <Link href="expertise" name="À mon sujet" />
                     <Link href="projects" name="Projets" />
                     <Link href="contact" name="Contacter" />
+                    <button onClick={toggleTheme} onMouseEnter={() => setThemeButton(themeIconHover)} onMouseLeave={() => setThemeButton(themeIcon)}>
+                        <img className="w-10" src={process.env.PUBLIC_URL + themeButton} alt='themeIcon' />
+                    </button>
                 </div>
                 <button className="sm:hidden" onClick={navbarStatus}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`w-12 h-12 ${navbar ? "hidden" : ""}`}>
@@ -38,7 +51,7 @@ function Header() {
                 <Link href="projects" name="Projets" />
                 <Link href="contact" name="Contacter" />
             </div>
-            <div className="flex flex-col text-center gap-y-6 pt-72 max-sm:pt-40">
+            <div className="flex flex-col justify-center items-center gap-y-6 max-sm:pt-40 h-full">
                 <h1 className="font-bold text-9xl max-sm:text-4xl">RATOUIT LUCAS</h1>
                 <h3 className="font-semibold text-xl max-sm:text-xs">Développeur FRONT END - BACK END</h3>
             </div>
