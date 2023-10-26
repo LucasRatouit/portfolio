@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { useTheme } from "./useTheme";
 
 function Header() {
-    const { toggleTheme, bgColors, themeLogo, themeIcon, themeIconHover } = useTheme();
+    const { toggleTheme, bgColors, themeLogo, themeIcon, themeIconHover, textColors } = useTheme();
     const [navbar, setNavbar] = useState(false);
     const [themeButton, setThemeButton] = useState(themeIcon)
 
     function Link(props) {
-        return <a className="relative inline-block group hover:text-white my-auto max-sm:bg-zinc-700 max-sm:px-3 max-sm:py-2 max-sm:rounded-lg" href={`/#${props.href}`}>
+        return <a className={`relative inline-block group hover:${textColors} my-auto max-sm:bg-zinc-700 max-sm:px-3 max-sm:py-2 max-sm:rounded-lg`} href={`/#${props.href}`}>
             {"<"}{props.name} {"/>"}
             <span className={`absolute w-0 h-px bottom-0 ${bgColors} left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:w-full`}></span>
             </a>
@@ -24,13 +24,10 @@ function Header() {
     useEffect(() => {
         setThemeButton(themeIcon)
     }, [themeIcon])
-    /*useEffect(() => {
-        setThemeButton(themeIconHover)
-    }, [themeIconHover])*/
     
     return (
         <header className="flex flex-col whitespace-nowrap pt-10 h-screen">
-            <div className="flex flex-row justify-between pl-10 pr-12 max-sm:px-2 max-sm:pr-7">
+            <div className="flex flex-row justify-between pl-10 pr-12 max-sm:pl-0 max-sm:pr-5">
                 <a href="/"><img className="w-32 max-sm:w-24" src={process.env.PUBLIC_URL + themeLogo} alt="logo" /></a>
                 <div className="flex gap-x-12 my-auto font-semibold text-lg max-sm:hidden">
                     <Link href="expertise" name="À mon sujet" />

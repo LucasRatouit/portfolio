@@ -11,8 +11,8 @@ export const ThemeProvider = ({children}) => {
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark');
     }
-    const bgFirst = theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-50';
-    const bgSecond = theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-100';
+    const bgFirst = theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-100';
+    const bgSecond = theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-200';
     const textColors = theme === 'dark' ? 'text-white' : 'text-black';
     const bgColors = theme === 'dark' ? 'bg-white' : 'bg-black';
     const themeLogo = theme === 'dark' ? 'logoLight.png' : 'logoDark.png';
