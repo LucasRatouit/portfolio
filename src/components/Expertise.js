@@ -21,7 +21,7 @@ function Expertise() {
     return (
         <div>
             <h1 className="flex justify-center font-bold text-6xl max-sm:text-4xl pb-6">À propos de moi</h1>
-            <p className="text-justify mx-96 max-sm:mx-6 pb-20">Je me suis lancé dans le domaine du développement web après avoir fini mon année de lycée en faisant un stage de 5 semaines dans un espace de Co-Working avec deux développeurs (un dév Front-end et Back-end) puis j'ai continué en autodidacte en étant épaulé par un développeur en freelance. (<a className="hover:text-zinc-500" href={process.env.PUBLIC_URL + '/POST_CV.pdf'} download>clique ici pour voir mon CV</a>)</p>
+            <p className="text-justify mx-96 max-sm:mx-6 pb-20">Pendant les deux dernières années, je me suis totalement investi dans le développement web, acquérant de l'expérience et des compétences en autodidacte. J'ai également eu l'opportunité de réaliser des stages aux côtés de développeurs indépendants (freelance), et j'ai continué à développer ses compétences tout au long de mon année de césure. Ces expériences m'ont offert une perspective pratique du fonctionnement des entreprises, mais l'autodidaxie en particulier a renforcé mon esprit d'analyse, ma curiosité, mon autonomie, ainsi que ma polyvalence.<a className="hover:text-zinc-500" href={process.env.PUBLIC_URL + '/cv-alternance-dev.pdf'} download> clique ici pour voir mon CV</a></p>
             <div className="flex flex-row max-sm:flex-col justify-center gap-20 mx-32 max-sm:mx-8">
                 <div className="flex flex-col place-content-center gap-y-10">
                     <Skills list={skillsLogo} type="skills" name="Mes compétences" />

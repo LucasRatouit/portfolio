@@ -26,7 +26,7 @@ function Header() {
     }, [themeIcon])
     
     return (
-        <header className="flex flex-col whitespace-nowrap pt-10 h-screen">
+        <header className="flex flex-col whitespace-nowrap pt-10 h-screen max-sm:h-3/4">
             <div className="flex flex-row justify-between pl-10 pr-12 max-sm:pl-0 max-sm:pr-5">
                 <a href="/"><img className="w-32 max-sm:w-24" src={process.env.PUBLIC_URL + themeLogo} alt="logo" /></a>
                 <div className="flex gap-x-12 my-auto font-semibold text-lg max-sm:hidden">
